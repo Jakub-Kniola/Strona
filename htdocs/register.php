@@ -10,13 +10,12 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
         $captcha = $_POST['g-recaptcha-response'];
-    
-        if (strlen($name) < 3) array_push($errors, 'Podane imie i naziwsko jest za krótkie!');
-        if (strlen($name) > 128) array_push($errors, 'Podane imie i naziwsko jest za długie!');
-        if (strlen($password) < 8) array_push($errors, 'Podane hasło jest za krótkie!');
-        if (strlen($password) > 100) array_push($errors, 'Podane hasło jest za długie!');
-        if (empty($captcha)) array_push($errors, 'Zaznacz pole captcha!');
+
+        if (strlen($name) < 3 || strlen($name) > 128) array_push($errors, 'Imie i naziwsko musi mieć od 3 do 128 znaków!');
+        if (strlen($email) < 6 || strlen($email) > 128) array_push($errors, 'Email musi mieć od 6 do 128 znaków!');
+        if (strlen($password) < 8 || strlen($password) > 128) array_push($errors, 'Hasło musi mieć od 8 do 128 znaków!');
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) array_push($errors, 'Podany email jest niepoprawny!');
+        if (empty($captcha)) array_push($errors, 'Zaznacz pole captcha!');
 
         if (empty($errors)) {
             $password = password_hash($password, PASSWORD_BCRYPT);
