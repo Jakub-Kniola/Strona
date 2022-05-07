@@ -11,11 +11,14 @@
         $password = $_POST['password'];
         $captcha = $_POST['g-recaptcha-response'];
 
-        if (strlen($name) < 3 || strlen($name) > 128) array_push($errors, 'Imie i naziwsko musi mieć od 3 do 128 znaków!');
+        if (strlen($name) < 3 || strlen($name) > 128) array_push($errors, 'Nazwa musi mieć od 3 do 128 znaków!');
         if (strlen($email) < 6 || strlen($email) > 128) array_push($errors, 'Email musi mieć od 6 do 128 znaków!');
         if (strlen($password) < 8 || strlen($password) > 128) array_push($errors, 'Hasło musi mieć od 8 do 128 znaków!');
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) array_push($errors, 'Podany email jest niepoprawny!');
+
         if (empty($captcha)) array_push($errors, 'Zaznacz pole captcha!');
+        if (!ctype_alnum($name)) array_push($errors, 'Nazwa można zawierać tylko litery i cyfry!');
+        if (!ctype_alnum($password)) array_push($errors, 'Hasło można zawierać tylko litery i cyfry!');
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) array_push($errors, 'Podany email jest niepoprawny!');
 
         if (empty($errors)) {
             $password = password_hash($password, PASSWORD_BCRYPT);
@@ -72,7 +75,7 @@
             ?>
         </div>
         <form method="POST" action="register.php">
-            <input name="name" type="text" placeholder="Imie i naziwsko" value="<?php echo (isset($_POST['name']) ? $_POST['name'] : '') ?>" required>
+            <input name="name" type="text" placeholder="Nazwa" value="<?php echo (isset($_POST['name']) ? $_POST['name'] : '') ?>" required>
             <input name="email" type="email" placeholder="Email" value="<?php echo (isset($_POST['email']) ? $_POST['email'] : '') ?>" required>
             <input name="password" type="password" placeholder="Hasło" value="<?php echo (isset($_POST['password']) ? $_POST['password'] : '') ?>" required>
             <input type="submit" value="Zarejestruj"><br><br>
