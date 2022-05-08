@@ -43,7 +43,8 @@
     }
 
     $fetched_user_id;
-
+    
+    $password = password_hash($password, PASSWORD_BCRYPT);
     $connection = mysqli_connect(MYSQL_ADDRESS, MYSQL_USERNAME, MYSQL_PASSWORD, MYSQL_DATABASE);
     $statement = mysqli_prepare($connection, 'SELECT user_id FROM users WHERE email = ?');
 
