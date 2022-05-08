@@ -14,7 +14,7 @@
 }
 ```
 
-POST /user/login.php -> email, password  
+### POST /user/login.php -> email, password  
 ```
 {
   "success": false,
@@ -45,4 +45,26 @@ Przykłady
 
 # Endpoiny produktów (gier)
 
-GET /product/products.php
+### GET /product/products.php
+```
+{
+  "success": true,
+  "message": "Zwórocono pomyślnie listę produktów!",
+  "products": [
+    {
+      "product_id": "1",
+      "title": "Test",
+      "subtitle": "TestSub",
+      "description": "qwerty",
+      "price": "5.00"
+    },
+    {
+      "product_id": "2",
+      "title": "GraTytul",
+      "subtitle": "GraPodtytul",
+      "description": "GraOpis",
+      "price": "100.00"
+    }
+  ]
+}
+```
