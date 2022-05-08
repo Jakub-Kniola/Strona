@@ -4,7 +4,7 @@ POST /user/register.php -> name, email, password | rejestracja użytkownika
 POST /user/login.php -> email, password | logowanie użytkownika  
 GET /user/logout.php | wylogowywanie użytkownika (+)  
 
-### Endpointy do zwracania porudktów (gier):
+### Endpointy do zwracania produktów (gier):
 GET /product/products.php | zwraca szystkie gry  
 GET /product/product.php -> product_id | zwraca jedną kokretną gre opartą o jej id  
 
