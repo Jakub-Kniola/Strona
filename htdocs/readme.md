@@ -1,18 +1,18 @@
 # Możliwe endpointy na ten moment (format: METODA ADRES -> pola do przesłania)
 POST /user/register.php -> name, email, password  
 POST /user/login.php -> email, password  
-GET /user/logout.php (*)  
+GET /user/logout.php (+)  
 
 GET /product/products.php  
 GET /product/product.php -> product_id  
 
-POST /cart/add.php -> product_id (*)  
-POST /cart/remove.php -> product_id (*)  
-GET /cart/show.php (*)  
+POST /cart/add.php -> product_id (+)  
+POST /cart/remove.php -> product_id (+)  
+GET /cart/show.php (+)  
 
-GET /purchase/show.php (*)
+GET /purchase/show.php (+)
 
-(*) - zalogowany użytkownik jest wymagany
+(+) - zalogowany użytkownik jest wymagany
 
 Wszystkie endpointy zwracają odpowiedź w formacie JSON. Na przykład:  
 ```
