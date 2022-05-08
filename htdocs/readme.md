@@ -6,4 +6,4 @@ POST /user/logout.php
 
 # Endpoiny produktów (gier)
 
-GET /product/product.php
+GET /product/products.php
