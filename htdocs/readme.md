@@ -18,7 +18,11 @@ GET /purchase/show.php | zwraca zakupione gry (+)
 
 **(+) - zalogowany użytkownik jest wymagany**
 
-### Wszystkie endpointy zwracają odpowiedź w formacie JSON. Na przykład:  
+# Jeszcze do zaprogramowania zostało:
+* Endpoint kupowania przedmiotów.
+* Może jakieś szukanie lub filtrowanie gier.
+
+# Wszystkie endpointy zwracają odpowiedź w formacie JSON. Na przykład:  
 ```
 {
   "success": false,
