@@ -20,8 +20,8 @@ GET /purchase/show.php | zwraca zakupione gry (+)
 
 # Jeszcze do zaprogramowania zostało:
 * Endpoint kupowania przedmiotów.
-* Może jakieś szukanie lub filtrowanie gier.
 * Zwracanie jakieś informacji o użytkoniku.
+* Może jakieś szukanie lub filtrowanie gier.
 
 # Wszystkie endpointy zwracają odpowiedź w formacie JSON. Na przykład:  
 ```
