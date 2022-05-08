@@ -1,8 +1,8 @@
 # Możliwe endpointy na ten moment (format: METODA ADRES -> pola do przesłania | opis)
 ### Endpointy do autoryzacji uzytkownika:
 POST /user/register.php -> name, email, password | rejestracja użytkownika  
-POST /user/login.php -> email, password | logowanie uzytkonika  
-GET /user/logout.php | wylogowywanie (+)  
+POST /user/login.php -> email, password | logowanie użytkownika  
+GET /user/logout.php | wylogowywanie użytkownika (+)  
 
 ### Endpointy do zwracania porudktów (gier):
 GET /product/products.php | zwraca szystkie gry  
