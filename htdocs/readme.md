@@ -1,20 +1,24 @@
-# Możliwe endpointy na ten moment (format: METODA ADRES -> pola do przesłania)
-POST /user/register.php -> name, email, password  
-POST /user/login.php -> email, password  
-GET /user/logout.php (+)  
+# Możliwe endpointy na ten moment (format: METODA ADRES -> pola do przesłania | opis)
+### Endpointy do autoryzacji uzytkownika:
+POST /user/register.php -> name, email, password | rejestracja użytkownika  
+POST /user/login.php -> email, password | logowanie uzytkonika  
+GET /user/logout.php | wylogowywanie (+)  
 
-GET /product/products.php  
-GET /product/product.php -> product_id  
+### Endpointy do zwracania porudktów (gier):
+GET /product/products.php | zwraca szystkie gry  
+GET /product/product.php -> product_id | zwraca jedną kokretną gre opartą o jej id  
 
-POST /cart/add.php -> product_id (+)  
-POST /cart/remove.php -> product_id (+)  
-GET /cart/show.php (+)  
+### Endpointy do zarządzania koszykiem:
+POST /cart/add.php -> product_id | dodaje gre do koszyka (+)  
+POST /cart/remove.php -> product_id | usuwa gre z koszyka (+)  
+GET /cart/show.php | zwraca gry, które zostały dodane do korzyka (+)  
 
-GET /purchase/show.php (+)
+### Endpointy do zarządzania zakupami (na ten moment jest tylko jeden):
+GET /purchase/show.php | zwraca zakupione gry (+)  
 
-(+) - zalogowany użytkownik jest wymagany
+**(+) - zalogowany użytkownik jest wymagany**
 
-Wszystkie endpointy zwracają odpowiedź w formacie JSON. Na przykład:  
+### Wszystkie endpointy zwracają odpowiedź w formacie JSON. Na przykład:  
 ```
 {
   "success": false,
