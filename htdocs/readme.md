@@ -17,7 +17,7 @@ GET /cart/content.php | zwraca gry, które zostały dodane do korzyka (podstawow
 ### Endpointy do zarządzania zakupami (na ten moment jest tylko jeden):
 POST /purhcase/purchase.php -> product_id | kupuje gre o danym id - w trakie prac (+)  
 GET /purchase/checkout.php | kupuje wszyskie gry zawarte w koszyku - w trakie prac (+)  
-GET /purchase/show.php | zwraca zakupione gry (podstawowe informacje) (+)  
+GET /purchase/show.php | zwraca zakupione gry (podstawowe informacje o grach) (+)  
 
 **(+) - zalogowany użytkownik jest wymagany**
 
