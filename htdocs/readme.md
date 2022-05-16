@@ -1,7 +1,7 @@
 # Możliwe endpointy na ten moment (format: METODA ADRES -> pola do przesłania | opis)
 ### Endpointy do autoryzacji uzytkownika:
 POST /api/user/register.php -> name, email, password | rejestracja użytkownika  
-POST /api/user/update.php -> name, email, password, confirmation (aktulne hasło) | zmiana danych użytkownika
+POST /api/user/update.php -> name, email, password, current_password | zmiana danych użytkownika
 POST /api/user/login.php -> email, password | logowanie użytkownika  
 GET /api/user/logout.php | wylogowywanie użytkownika (+)  
 
