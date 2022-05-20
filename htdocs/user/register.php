@@ -48,7 +48,7 @@
         return;
     }
 
-    $response = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=6LdSavsfAAAAAMprRmJ4o7XFG5zwhvM7v3_5s9sG&response=' . $captcha);
+    $response = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=xxx&response=' . $captcha);
     $verification = json_decode($response, true);
 
     if (!$verification['success']) {
