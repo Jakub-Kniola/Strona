@@ -16,8 +16,8 @@ POST /api/cart/remove.php -> product_id | usuwa gre z koszyka (+)
 GET /api/cart/show.php | zwraca gry, które zostały dodane do korzyka (podstawowe informacje o grach) (+)  
 
 ### Endpointy do zarządzania zakupami:
-POST /api/purhcase/purchase.php -> product_id | zwraca link do strony PayPal, na który trzeba przkierować użytkownika (+)  
-GET /api/purchase/checkout.php | zwraca link do strony PayPal, na który trzeba przkierować użytkownika (+) !! W TRAKCIE PRAC !!  
+POST /api/purhcase/purchase.php -> product_id | zwraca link do strony PayPal, na który trzeba przekierować użytkownika (+)  
+GET /api/purchase/checkout.php | zwraca link do strony PayPal, na który trzeba przekierować użytkownika (+) !! W TRAKCIE PRAC !!  
 GET /api/purchase/capture.php -> token | zatwierdza płatność w systemie PayPal - od tego momentu płatność zostaje zatwierdzona i gra zakupiona  
 GET /api/purchase/show.php | zwraca zakupione gry (podstawowe informacje o grach) (+)  
 
