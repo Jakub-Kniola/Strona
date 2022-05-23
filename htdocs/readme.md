@@ -3,7 +3,7 @@
 POST /api/user/register.php -> name, email, password, captcha | rejestracja użytkownika  
 POST /api/user/login.php -> email, password | logowanie użytkownika  
 GET /api/user/logout.php | wylogowywanie użytkownika (+)  
-POST /api/user/update -> name, email, password, verification (aktualne hasło w celu weryfikacji uzytkonika) | zmiana danych użytkonika - pola są opcjonalne, to znaczy, że może zakualizować tylko np.: imie, albo wszykie dane na raz (+)  
+POST /api/user/update -> name, email, password, verification (aktualne hasło w celu weryfikacji użytkownika) | zmiana danych użytkonika - pola są opcjonalne, to znaczy, że może zakualizować tylko np.: imie, albo wszykie dane na raz (+)  
 GET /api/user/show.php | zwraca informacje o użytkoniku (+)
 
 ### Endpointy do zwracania produktów (gier):
@@ -16,8 +16,9 @@ POST /api/cart/remove.php -> product_id | usuwa gre z koszyka (+)
 GET /api/cart/show.php | zwraca gry, które zostały dodane do korzyka (podstawowe informacje o grach) (+)  
 
 ### Endpointy do zarządzania zakupami:
-POST /api/purhcase/purchase.php -> product_id | kupuje gre o podanym id (+)  
-GET /api/purchase/checkout.php | kupuje wszyskie gry zawarte w koszyku (+)  
+POST /api/purhcase/purchase.php -> product_id | zwraca link do strony PayPal, na który trzeba przkierować użytkownika (+)  
+GET /api/purchase/checkout.php | zwraca link do strony PayPal, na który trzeba przkierować użytkownika (+) !! W TRAKCIE PRAC !!  
+GET /api/purchase/capture.php -> token | zatwierdza płatność w systemie PayPal - od tego momentu płatność zostaje zatwierdzona i gra zakupiona  
 GET /api/purchase/show.php | zwraca zakupione gry (podstawowe informacje o grach) (+)  
 
 **(+) - zalogowany użytkownik jest wymagany**
@@ -164,5 +165,12 @@ GET /api/purchase/show.php | zwraca zakupione gry (podstawowe informacje o grach
             "purchase_date": "2022-05-10 17:03:44"
         }
     ]
+}
+```
+```
+{
+    "success": true,
+    "message": "Odnośnik do płatności został wygenerowany pomyślnie!",
+    "link": "https://www.sandbox.paypal.com/checkoutnow?token=3VA40614808572922"
 }
 ```
