@@ -1,7 +1,9 @@
 CREATE TABLE users (
 	user_id INT(11) AUTO_INCREMENT,
-	name VARCHAR(128) NOT NULL,
-	email VARCHAR(128) UNIQUE NOT NULL,
+	name VARCHAR(64) NOT NULL,
+	email VARCHAR(64) UNIQUE NOT NULL,
+	phone VARCHAR(16),
+	birthday VARCHAR(16),
 	password VARCHAR(256) NOT NULL,
 	PRIMARY KEY (user_id)
 );
@@ -34,16 +36,28 @@ CREATE TABLE products (
 	PRIMARY KEY (product_id)
 );
 
+
+CREATE TABLE paynament (
+	id,
+	token,
+	state
+)
+
 CREATE TABLE purchase (
 	purchase_id INT(11) AUTO_INCREMENT,
 	user_id INT(11) NOT NULL,
 	product_id INT(11) NOT NULL,
+	token VARCHAR(32) NOT NULL,
 	price DECIMAL(5,2) NOT NULL,
-	date TIMESTAMP NOT NULL,
+	completed BOOLEAN DEFAULT 0,
+	date TIMESTAMP,
+	key VARCHAR(255),
 	PRIMARY KEY (purchase_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id),
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
+
+
 
 CREATE TABLE cart (
 	user_id INT(11),
